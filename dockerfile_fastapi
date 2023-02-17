@@ -1,0 +1,20 @@
+
+FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-runtime
+
+Run apt-get update && apt-get install git -y
+
+
+RUN mkdir /app
+WORKDIR /app
+
+ADD requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+
+COPY . /app
+
+RUN python3 -m load_models.kazakh_model
+
+EXPOSE 8000
+
+CMD uvicorn fastapis.kazakh_language_generation_bloom:app --host 0.0.0.0 --port 8000 --reload
