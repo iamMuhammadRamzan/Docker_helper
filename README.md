@@ -28,8 +28,8 @@ sudo reboot
 #### Install using Shell Script
 
 ```
-chmod a+x docker-installation.sh
-./docker-installation.sh
+chmod a+x docker_installation.sh
+./docker_installation.sh
 ```
   - For systems with `GPU` run following commands after installing docker.
 
@@ -56,12 +56,3 @@ chmod a+x docker-installation.sh
 sudo rm -rf /var/lib/apt/lists/*
 ./docker-installation.sh
 ```
-
-```
-# jump back to main folder
-cd ..
-```
-
-If everything is done successfully you can return to [Installation Page](../README.md) 
-
-In case shell script keeps failing or you want to install manually follow steps in [Manual Installation](Instructions/Manual-Installation.md)
